@@ -55,11 +55,13 @@ int main() {
   // create visual upper and lower bounds
   while (1) {
 
+    // Set cursor to home
     cout << "\x1b[H";
 
     cout << renderScreen(buffer);
 
     cout << flush;
-    usleep(9000);
+
+    usleep(10000);
   }
 }
