@@ -1,14 +1,18 @@
+#ifndef VERTICAL_HPP
+#define VERTICAL_HPP
+
 #include "tetromino.hpp"
-#include <string>
 
 class Vertical : public Tetromino {
 private:
-  const std::string stringRep = "#\n#\n#\n#";
-  const bool falling;
+  static constexpr std::string_view stringRep = "#\n#\n#\n#";
+  bool falling;
 
 public:
   Vertical() : falling(true) {};
 
-  std::string getShape() const override { return stringRep; }
+  std::string_view getShape() const override { return stringRep; }
   bool isFalling() const override { return falling; }
 };
+
+#endif

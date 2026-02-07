@@ -1,14 +1,18 @@
+#ifndef SQUARE_HPP
+#define SQUARE_HPP
+
 #include "tetromino.hpp"
-#include <string>
 
 class Square : public Tetromino {
 private:
-  const std::string stringRep = "##\n##";
-  const bool falling;
+  static constexpr std::string_view stringRep = "##\n##";
+  bool falling;
 
 public:
   Square() : falling(true) {};
 
-  std::string getShape() const override { return stringRep; }
+  std::string_view getShape() const override { return stringRep; }
   bool isFalling() const override { return falling; }
 };
+
+#endif

@@ -1,14 +1,18 @@
+#ifndef LEFT_LEG_HPP
+#define LEFT_LEG_HPP
+
 #include "tetromino.hpp"
-#include <string>
 
 class Left_Leg : public Tetromino {
 private:
-  const std::string stringRep = "  #\n  #\n ##";
-  const bool falling;
+  static constexpr std::string_view stringRep = "  #\n  #\n ##";
+  bool falling;
 
 public:
   Left_Leg() : falling(true) {};
 
-  std::string getShape() const override { return stringRep; }
+  std::string_view getShape() const override { return stringRep; }
   bool isFalling() const override { return falling; }
 };
+
+#endif
